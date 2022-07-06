@@ -652,6 +652,26 @@ GLOBAL_LIST_INIT(synthetic_clothes_listed_products, list(
 		/obj/item/clothing/mask/gas/tactical/coif = list(CAT_MAS, "Tactical coifed gas mask", 0,"black"),
 	))
 
+
+GLOBAL_LIST_INIT(jedi_clothes_listed_products, list(
+		/obj/effect/essentials_set/synth = list(CAT_ESS, "Essential synthetic set", 0, "white"),
+		/obj/item/clothing/under/marine = list(CAT_STD, "TGMC marine uniform", 0, "black"),
+		/obj/item/clothing/under/marine/jedi = list(CAT_STD, "Jedi Robes", 0, "brown"),
+		/obj/item/clothing/under/rank/medical/blue = list(CAT_STD, "Medical scrubs (blue)", 0, "black"),
+		/obj/item/clothing/suit/storage/hazardvest = list(CAT_AMR, "Orange reflective safety vest", 0, "black"),
+		/obj/item/storage/backpack/marine/satchel = list(CAT_BAK, "Satchel", 0, "black"),
+		/obj/item/armor_module/storage/uniform/surgery_webbing = list(CAT_WEB, "White surgical webbing", 0, "black"),
+		/obj/item/clothing/gloves/marine/officer = list(CAT_GLO, "Officer gloves", 0, "black"),
+		/obj/item/clothing/gloves/white = list(CAT_GLO, "White gloves", 0, "black"),
+		/obj/item/storage/belt/lifesaver = list(CAT_BEL, "Lifesaver belt", 0, "orange"),
+		/obj/item/clothing/shoes/marine = list(CAT_SHO, "Marine combat boots", 0, "black"),
+		/obj/item/clothing/shoes/marine/jedi = list(CAT_SHO, "Jedi boots", 0, "brown"),
+		/obj/item/storage/pouch/general/large = list(CAT_POU, "General pouch", 0, "black"),
+		/obj/item/clothing/head/hardhat = list(CAT_HEL, "Hard hat", 0, "black"),
+		/obj/item/clothing/mask/gas/tactical/coif = list(CAT_MAS, "Tactical coifed gas mask", 0,"black"),
+	))
+
+
 ///Assoc list linking the job title with their specific clothes vendor
 GLOBAL_LIST_INIT(job_specific_clothes_vendor, list(
 	SQUAD_MARINE = GLOB.marine_clothes_listed_products,

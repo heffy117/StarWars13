@@ -485,6 +485,19 @@
 	. = ..()
 	listed_products = GLOB.synthetic_clothes_listed_products
 
+/obj/machinery/marine_selector/clothes/jedi
+	name = "M57 Jedi Equipment Vendor"
+	desc = "An automated jedi equipment vendor hooked up to a modest storage unit."
+	icon_state = "synth"
+	icon_vend = "synth-vend"
+	icon_deny = "synth-deny"
+	vendor_role = /datum/job/terragov/command/jedi
+	lock_flags = JOB_LOCK
+
+/obj/machinery/marine_selector/clothes/jedi/Initialize()
+	. = ..()
+	listed_products = GLOB.jedi_clothes_listed_products
+
 ////////////////////// Gear ////////////////////////////////////////////////////////
 
 

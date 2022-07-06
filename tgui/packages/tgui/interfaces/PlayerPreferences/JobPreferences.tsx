@@ -21,6 +21,7 @@ export const JobPreferences = (props, context) => {
   const xenoJobs = ['Xeno Queen', 'Xenomorph'];
   const commandRoles = [
     'Captain',
+	'Jedi',
     'Field Commander',
     'Staff Officer',
     'Pilot Officer',

@@ -26,6 +26,34 @@
 	dodging = TRUE
 	rapid_melee = 2
 
+/mob/living/simple_animal/hostile/b1
+	name = "Battle Droid Simple"
+	desc = "Death to the Republic."
+	icon = 'icons/mob/simple_human.dmi'
+	icon_state = "b1"
+	icon_living = "b1"
+	icon_dead = "syndicate_dead"
+	icon_gib = "syndicate_gib"
+	speak_chance = 0
+	turns_per_move = 5
+	response_help = "pokes"
+	response_disarm = "shoves"
+	response_harm = "hits"
+	speed = 0
+	robust_searching = TRUE
+	maxHealth = 100
+	health = 100
+	harm_intent_damage = 5
+	melee_damage = 10
+	attacktext = "punches"
+	attack_sound = 'sound/weapons/punch1.ogg'
+	a_intent = INTENT_HARM
+	check_friendly_fire = TRUE
+	status_flags = CANPUSH
+	del_on_death = TRUE
+	dodging = TRUE
+	rapid_melee = 2
+
 
 /mob/living/simple_animal/hostile/syndicate/space
 	icon_state = "syndicate_space"

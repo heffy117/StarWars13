@@ -95,6 +95,86 @@ Godspeed, captain! And remember, you are not above the law."})
 		if(7501 to INFINITY) //125 hrs
 			new_human.wear_id.paygrade = "O8"
 
+//JEDI
+/datum/job/terragov/command/jedi
+	title = JEDI
+	req_admin_notify = TRUE
+	paygrade = "O3"
+	comm_title = "JEDI"
+	total_positions = 10
+	skills_type = /datum/skills/fo
+	access = ALL_MARINE_ACCESS
+	minimal_access = ALL_MARINE_ACCESS
+	display_order = JOB_DISPLAY_ORDER_JEDI
+	outfit = /datum/outfit/job/command/jedi
+	exp_requirements = XP_REQ_EXPERIENCED
+	exp_type = EXP_TYPE_REGULAR_ALL
+	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_ISCOMMAND|JOB_FLAG_BOLD_NAME_ON_SELECTION|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS|JOB_FLAG_ALWAYS_VISIBLE_ON_MINIMAP
+	jobworth = list(
+		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
+		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
+	)
+	html_description = {"
+		<b>Difficulty</b>:Very Hard<br /><br />
+		<b>You answer to the</b> Senate<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Crash, Distress<br /><br /><br />
+		<b>Duty</b>: Lead the clones. Take advantage of the military staff and assets you will need for the mission, keep good relations between command and the clones. Keep the senate and jedi council happy.
+	"}
+	minimap_icon = "fieldcommander"
+
+/datum/job/terragov/command/jedi/sith
+	title = REBEL_FIELD_COMMANDER
+	faction = FACTION_TERRAGOV_REBEL
+	access = ALL_MARINE_REBEL_ACCESS
+	minimal_access = ALL_MARINE_REBEL_ACCESS
+	outfit = /datum/outfit/job/command/fieldcommander/rebel
+	jobworth = list(
+		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/terragov/squad/smartgunner/rebel = SMARTIE_POINTS_REGULAR,
+		/datum/job/terragov/silicon/synthetic/rebel = SYNTH_POINTS_REGULAR,
+	)
+
+/datum/job/terragov/command/jedi/after_spawn(mob/living/L, mob/M, latejoin)
+	. = ..()
+	SSdirection.set_leader(TRACKING_ID_MARINE_COMMANDER, L)
+
+
+/datum/job/terragov/command/jedi/radio_help_message(mob/M)
+	. = ..()
+	to_chat(M, {"Your duties are to command the Grand army of the Republic (GAR), and ensure operational success.
+Do not order your men to do anything the senate or the jedi council would dissaprove of.
+Lead the Grand army of the republic to victory!"})
+
+/datum/job/terragov/command/jedi/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = TRUE)
+	. = ..()
+	if(!ishuman(new_mob))
+		return
+	var/mob/living/carbon/human/new_human = new_mob
+	var/playtime_mins = user?.client?.get_exp(title)
+	if(!playtime_mins || playtime_mins < 1 )
+		return
+	switch(playtime_mins)
+		if(0 to 1500) //starting
+			new_human.wear_id.paygrade = "O3"
+		if(1500 to 7500) // 25 hrs
+			new_human.wear_id.paygrade = "MO4"
+		if(7501 to INFINITY) // 125 hrs
+			new_human.wear_id.paygrade = "MO5"
+
+
+/datum/outfit/job/command/jedi
+	name = JEDI
+	jobtype = /datum/job/terragov/command/jedi
+	id = /obj/item/card/id/dogtag
+	ears = /obj/item/radio/headset/mainship/mcom
+	w_uniform = /obj/item/clothing/under/marine/officer/exec
+	shoes = /obj/item/clothing/shoes/marine/full
+	gloves = /obj/item/clothing/gloves/marine/officer
+	l_store = /obj/item/hud_tablet/fieldcommand
+	back = /obj/item/storage/backpack/marine/satchel
+
 //Field Commander
 /datum/job/terragov/command/fieldcommander
 	title = FIELD_COMMANDER

@@ -44,6 +44,11 @@
 	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented combat engineer fatigues. You suspect it's not as robust-proof as advertised."
 	icon_state = "marine_engineer"
 
+/obj/item/clothing/under/marine/jedi
+	name = "\improper Jedi clothes"
+	desc = "A set of robes worn by jedi."
+	icon_state = "jedi"
+
 
 /obj/item/clothing/under/marine/jaeger
 	name = "\improper TGMC jaeger undersuit"
